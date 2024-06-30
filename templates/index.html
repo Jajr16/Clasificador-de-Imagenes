@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mejorar Foto</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        #container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 50px;
+        }
+        .image-container {
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+            width: 400px; /* Ancho del contenedor de imagen */
+            height: 300px; /* Alto del contenedor de imagen */
+            margin-bottom: 20px; /* Espacio entre los contenedores de imagen */
+        }
+        .image-container img {
+            max-width: 100%; /* Para asegurar que la imagen no exceda el tamaño del contenedor */
+            height: auto;
+            transition: transform 0.3s ease;
+            cursor: pointer; /* Cambia el cursor a una mano cuando pasa sobre la imagen */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        .image-container:hover img {
+            transform: scale(1.5); /* Aumenta la escala de la imagen al 150% al hacer hover */
+        }
+        #download-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto; /* Para centrar el botón */
+        }
+        #download-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mejorar Foto</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+        <input type="file" id="file-input" name="image" accept="image/*" required>
+        <button type="submit">Mejorar Foto</button>
+    </form>
+    <div id="container">
+        <div id="original" class="image-container">
+            <h2>Imagen Original:</h2>
+            <img id="original-image" src="#" alt="Imagen original" style="display:none;">
+        </div>
+        <div id="result" class="image-container">
+            <h2>Imagen Mejorada:</h2>
+            <img id="enhanced-image" src="#" alt="Imagen mejorada" style="display:none;">
+            <br>
+            <button id="download-btn">Descargar Imagen Mejorada</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('upload-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const formData = new FormData();
+            const fileInput = document.getElementById('file-input');
+            formData.append('image', fileInput.files[0]);
+
+            const originalImage = document.getElementById('original-image');
+            originalImage.src = URL.createObjectURL(fileInput.files[0]);
+            originalImage.style.display = 'block';
+
+            const response = await fetch('/mejorar', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                const blob = await response.blob();
+                const url = URL.createObjectURL(blob);
+                const img = document.getElementById('enhanced-image');
+                img.src = url;
+                img.style.display = 'block';
+
+                // Configurar la descarga al hacer clic en el botón
+                const downloadBtn = document.getElementById('download-btn');
+                downloadBtn.addEventListener('click', () => {
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'imagen_mejorada.jpg';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                });
+            } else {
+                alert('Error al mejorar la foto');
+            }
+        });
+    </script>
+</body>
+</html>
+
