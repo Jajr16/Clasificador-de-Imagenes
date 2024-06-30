@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesador de imágenes</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+<body>
+    <header>
+        <div class="botones">
+            <button id="cerrarSesion" onclick="cerrarSesion()">Cerrar Sesión</button>
+        </div>
+        <h1>Procesador de imágenes</h1>
+        <div class="botones">
+            <button id="cargarImagen" >Cargar Imagen</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="login-container">
+          <h2>Iniciar sesión</h2>
+          <form id="loginForm">
+            <label for="username">Ingrese su Usuario:</label>
+            <input type="text" id="username" name="username" placeholder="Su nombre de usuario">
+            <label for="password">Ingrese su Contraseña:</label>
+            <input type="password" id="password" name="password" placeholder="Su contraseña">
+            <button type="submit">Iniciar Sesión</button>
+          </form>
+        </div>
+      </main>
+
+    <footer>
+        <p class="nombres-centrados">
+            &copy;
+            <span>De la Cruz De la Cruz Alejandra</span>
+            <span> Flores Esquivel Luis Antonio</span>
+            <span>Jimenez Rodriguez Jose Alfredo</span>
+            <span>Rosales Benhumea Aldo</span>
+          </p> 
+    </footer>
+
+    <script src="../js/login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+/* Estilos generales */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header, main, footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+/* Estilos para el encabezado */
+header {
+    color: #fff;
+    background-color: #01111A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main{
+    background-image: url('../img/Mont.jpg');
+    background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center center; /* Centra la imagen */
+    padding: 20px; /* Añade un poco de padding para que el contenido no esté pegado al borde */
+    min-height: 50vh; /* Altura mínima del main */
+    max-height: 80vh; /* Altura máxima del main */
+    overflow: auto; /* Permite el scroll si el contenido excede la altura máxima */
+    display: flex; /* Usar Flexbox para centrar el contenido */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+
+/* ESTILOS DE PANTALLAS */
+.botones {
+    display: flex;
+}
+
+.botones button {
+    margin-left: 10px;
+    padding: 8px 15px;
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center; /* Centra el botón verticalmente (si es necesario) */
+    justify-content: center; /* Centra el botón horizontalmente */
+}
+
+/* Estilos para la zona de carga */
+.zona-carga {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.zona-carga img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.zona-carga p {
+    font-size: 18px;
+    color: #007bff;
+    cursor: pointer;
+}
+
+/* Estilos para los resultados */
+.resultados {
+    padding-top: 50px;
+}
+
+.cuadros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cuadro {
+    width: 300px;
+    margin: 10px;
+    text-align: center;
+}
+
+.cuadro img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Estilos para el pie de página */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #01040C;
+    border-top: 1px solid #ddd;
+}
+
+.nombres-centrados {
+    color: #fff;
+    text-align: center; /* Centra los nombres */
+    display: flex; /* Permite usar flexbox para el espaciado */
+    justify-content: space-between; /* Distribuye los nombres uniformemente */
+  }
+  
+  .nombres-centrados span {
+    margin-right: 20px; /* Agrega una tabulación entre los nombres */
+  }
+  
+
+  .login-container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
