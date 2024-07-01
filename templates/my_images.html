@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %} Mis Imágenes Mejoradas {% endblock %}
+
+{% block header %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/proyectos.css') }}">
+<div class="navigator">
+    <i class="fa-solid fa-circle-arrow-left size_icons"></i>
+    <h1>Mejorar Foto</h1>
+    <a href="/my_images"><i class="fa-solid fa-folder size_icons"></i></a>
+</div>
+{% endblock %}
+{% block content %}
+    <h1>Mis Imágenes Mejoradas</h1>
+    <div id="image-gallery">
+        {% for url in enhanced_image_urls %}
+            {% if url %}
+                <div class="image-container">
+                    <img src="{{ url }}" alt="Imagen mejorada">
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <a href="/">Volver a la página principal</a>
+{% endblock %}

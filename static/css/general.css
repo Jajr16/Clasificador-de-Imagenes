@@ -1,0 +1,69 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    font-size: 1.5rem;
+}
+
+.size_icons {
+    font-size: 3rem;
+    color: #E84545;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-image: url('../images/Mont.jpg');
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center center; /* Centra la imagen */
+    min-height: 100vh; /* Asegura que el fondo cubra al menos la altura de la ventana */
+    overflow: hidden;
+    position: relative;
+    color: white;
+    padding: 0.5rem 2rem;
+}
+
+header{
+    width: 100%;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: -1; 
+}
+
+main {
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.navigator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}

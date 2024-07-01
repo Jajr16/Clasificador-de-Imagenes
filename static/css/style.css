@@ -29,7 +29,7 @@ header {
 }
 
 main{
-    background-image: url('../img/Mont.jpg');
+    background-image: url('../static/images/Mont.jpg');
     background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     background-position: center center; /* Centra la imagen */
