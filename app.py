@@ -76,7 +76,6 @@ def index():
 @app.route('/my_images')
 def images():
     session = request.cookies.get('session_id')
-    print(f'ASDAS {session}')
     if not session:
         return redirect(url_for('index'))
     enhanced_img_urls = request.cookies.get(session, '').split(',')

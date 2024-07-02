@@ -1,0 +1,20 @@
+#image-gallery {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.image-container {
+    flex: 1;
+    margin: 5px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}
