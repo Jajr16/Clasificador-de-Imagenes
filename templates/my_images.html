@@ -9,25 +9,23 @@
     <a href="/my_images"><i class="fa-solid fa-folder size_icons"></i></a>
 </div>
 {% endblock %}
+
 {% block content %}
-    <div id="image-gallery">
-        {% set counter = 0 %}
-        {% for url in enhanced_image_urls %}
-            {% if url %}
-                {% if counter % 3 == 0 %}
-                    <div class="row">
-                {% endif %}
-                        <div class="image-container">
-                            <img src="{{ url }}" alt="Imagen mejorada">
-                        </div>
-                {% if counter % 3 == 0 %}
-                    </div>
-                {% endif %}
-            {% set counter = counter + 1 %}
-            {% endif %}
-        {% endfor %}
-        {% if counter % 3 != 0 %}
-            </div>
-        {% endif %}
+<div id="container">
+    <div class="rectangle add-new">
+        <i class="fa fa-plus fa-3x"></i>
+        <a href="/" class="add-photo-link">
+            <span>Agregar Nueva Foto</span>
+        </a>
     </div>
+    {% set counter = enhanced_image_urls|length %}
+    {% for url in enhanced_image_urls %}
+        <div class="rectangle">
+            <div class="image-container">
+                <img src="{{ url }}" alt="Foto {{ loop.index }}">
+                <div class="name-tag">Foto {{ loop.index }}</div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
 {% endblock %}
