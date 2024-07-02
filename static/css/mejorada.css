@@ -14,7 +14,6 @@ img {
 .rectangle {
     background-color: #DFE1E4;
     text-align: center;
-    overflow: hidden; /* Asegura que cualquier parte de la imagen que se salga del contenedor esté oculta */
     position: relative;
     width: 400px; /* Ancho del contenedor de imagen */
     height: 300px; /* Alto del contenedor de imagen */
