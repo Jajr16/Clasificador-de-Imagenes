@@ -8,15 +8,25 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css') }}">
     <title>{% block title %}{% endblock %}</title>
 </head>
-<header>
-    <nav>
-        {% block header %}{% endblock %}
-    </nav>
-</header>
+
 <body>
+    <header>
+        <nav>
+            {% block header %}{% endblock %}
+        </nav>
+    </header>
     <main>
         {% block content %}{% endblock %}
     </main>
+    <footer>
+        <p class="nombres-centrados">
+            &copy;
+            <span>De la Cruz De la Cruz Alejandra</span>
+            <span> Flores Esquivel Luis Antonio</span>
+            <span>Jimenez Rodriguez Jose Alfredo</span>
+            <span>Rosales Benhumea Aldo</span>
+        </p>
+    </footer>
 </body>
 
 </html>

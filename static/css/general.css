@@ -1,5 +1,4 @@
 html, body {
-    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -23,14 +22,24 @@ body {
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     background-position: center center; /* Centra la imagen */
     min-height: 100vh; /* Asegura que el fondo cubra al menos la altura de la ventana */
-    overflow: hidden;
+    overflow: auto; /* Permite el desplazamiento */
     position: relative;
     color: white;
     padding: 0.5rem 2rem;
 }
 
-header{
+header, footer {
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header {
     width: 100%;
+    color: #fff;
+    background-color: #01111A;
+    align-items: center;
 }
 
 body::before {
@@ -66,4 +75,21 @@ form {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+}
+
+footer {
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    background-color: #01040C;
+}
+
+.nombres-centrados {
+    color: #fff;
+    text-align: center; 
+    justify-content: space-between; 
+}
+  
+.nombres-centrados span {
+    margin-right: 20px; /* Agrega una tabulación entre los nombres */
 }
