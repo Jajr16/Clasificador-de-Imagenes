@@ -28,8 +28,7 @@
 }
 
 .rectangle {
-    background-color: #FFF; 
-    border: 3px solid #ff4d4d; 
+    background-color: #DFE1E4;
     width: 300px; 
     height: 200px; 
     margin-bottom: 20px; 
@@ -37,8 +36,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    /* overflow: hidden; */
     cursor: pointer;
+}
+
+.rectangle::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(100% + 0.1rem);
+    height: calc(100% + 0.1cm);
+    background-color: #e74c3c;
+    z-index: -1;
 }
 
 .rectangle.add-new {
