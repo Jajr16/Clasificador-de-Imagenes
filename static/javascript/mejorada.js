@@ -16,13 +16,13 @@ document.getElementById('upload-form').addEventListener('submit', async (event) 
     if (response.ok) {
         const blob = await response.blob();
         const url = URL.createObjectURL(blob);
-        const enhancedImage = document.getElementById('enhanced-image');
-        enhancedImage.src = url;
-        enhancedImage.style.display = 'block';
+        const img = document.getElementById('enhanced-image');
+        img.src = url;
+        img.style.display = 'block';
 
         // Configurar la descarga al hacer clic en el botón
         const downloadBtn = document.getElementById('download-btn');
-        downloadBtn.style.visibility = 'visible';
+        downloadBtn.style.visibility = 'visible'
         downloadBtn.addEventListener('click', () => {
             const a = document.createElement('a');
             a.href = url;
@@ -30,14 +30,6 @@ document.getElementById('upload-form').addEventListener('submit', async (event) 
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
-        });
-
-        // Funcionalidad de zoom
-        const range = document.getElementById('zoom-range');
-        range.addEventListener('input', (event) => {
-            const scale = event.target.value;
-            enhancedImage.style.transform = `scale(${scale})`;
-            originalImage.style.transform = `scale(${scale})`;
         });
     } else {
         alert('Error al mejorar la foto');
