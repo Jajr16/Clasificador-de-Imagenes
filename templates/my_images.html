@@ -4,7 +4,7 @@
 {% block header %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/proyectos.css') }}">
 <div class="navigator">
-    <i class="fa-solid fa-circle-arrow-left size_icons"></i>
+    <a href="/"><i class="fa-solid fa-circle-arrow-left size_icons"></i></a>
     <h1>Mis imágenes mejoradas</h1>
     <a href="/my_images"><i class="fa-solid fa-folder size_icons"></i></a>
 </div>
@@ -30,5 +30,4 @@
             </div>
         {% endif %}
     </div>
-    <a href="/">Volver a la página principal</a>
 {% endblock %}
