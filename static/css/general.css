@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -25,20 +31,20 @@ body {
     overflow: auto; /* Permite el desplazamiento */
     position: relative;
     color: white;
-    padding: 0.5rem 2rem;
+    padding: 0;
 }
 
 header, footer {
+    margin: 0;
+    top: 0;
     max-width: 100%;
     padding: 20px;
-    border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header {
     width: 100%;
     color: #fff;
-    background-color: #01111A;
     align-items: center;
 }
 
@@ -75,10 +81,11 @@ form {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    padding: 0 1rem;
+    height: 2rem;
 }
 
 footer {
-    border-radius: 10px;
     width: 100%;
     text-align: center;
     background-color: #01040C;

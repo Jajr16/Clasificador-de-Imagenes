@@ -37,6 +37,7 @@ img {
     width: 100%; /* Ajusta el tamaño del contenedor al 100% del padre (.rectangle) */
     height: 100%; /* Ajusta el tamaño del contenedor al 100% del padre (.rectangle) */
     position: relative;
+    margin-bottom: 1rem;
 }
 
 .image-container img {
