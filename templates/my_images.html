@@ -20,12 +20,18 @@
     </div>
     {% set counter = enhanced_image_urls|length %}
     {% for url in enhanced_image_urls %}
-        <div class="rectangle">
-            <div class="image-container">
-                <img src="{{ url }}" alt="Foto {{ loop.index }}">
-                <div class="name-tag">Foto {{ loop.index }}</div>
-            </div>
+    <div class="rectangle">
+        <div class="image-container">
+            <img src="{{ url }}" alt="Foto {{ loop.index }}" class="modal-img">
+            <div class="name-tag">Foto {{ loop.index }}</div>
         </div>
+    </div>
     {% endfor %}
 </div>
+
+<div id="myModal" class="modal" style="display: none;">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+</div>
+<script src="{{ url_for('static', filename='javascript/modal.js') }}"></script>
 {% endblock %}
